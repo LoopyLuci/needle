@@ -69,7 +69,7 @@ Word error rate on the full test splits, scored with the Whisper normalizers. Wh
 needle --model needle3.cact --model whistle.cact --tools tools.json --audio clip.wav
 ```
 
-One engine holds both models: `needle_load` reads whichever one a `.cact` carries, and `needle_complete` takes a clip wherever it takes text. It transcribes, answers the transcript against your tools, and returns one JSON object with the tool calls and the speech fields, the speech ones prefixed `audio_`. The transcription stays inside the engine, so audio in and tool calls out is one call.
+One engine holds both models: `needle_load` reads whichever one a `.cact` carries, and `needle_complete` takes a clip wherever it takes text. It transcribes, answers the transcript against your tools, and returns one JSON object with the tool calls and the speech fields, the speech ones prefixed `audio_`. The transcription stays inside the engine, so audio in and tool calls out is one call, and it favours the option values your schemas enumerate, so a clip that names one is transcribed as the schema spells it.
 
 The benchmarks against Whisper and Moonshine, the architecture and the interactive demo are at [cactuscompute.com/whistle](https://cactuscompute.com/whistle); the weights and every platform engine are on [Hugging Face](https://huggingface.co/Cactus-Compute/whistle).
 
